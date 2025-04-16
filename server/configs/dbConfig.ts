@@ -1,6 +1,7 @@
 import path from "path";
 import { DataSource } from "typeorm";
 import {User} from '../components/user/user.entity'
+import { Chat } from "../components/chat/chat.entity";
 
 const AppDataSource = new DataSource({
     type: "mysql",
@@ -9,7 +10,7 @@ const AppDataSource = new DataSource({
     username: "root",
     database: "node-sequelize",
     synchronize: true,
-    entities: [User],
+    entities: [User, Chat],
 })
 
 export default AppDataSource
